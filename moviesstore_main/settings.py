@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Our Apps
+    # Our SCITT class Apps
     'home.apps.HomeConfig',
     'accounts.apps.AccountsConfig',
     'movies.apps.MoviesConfig',

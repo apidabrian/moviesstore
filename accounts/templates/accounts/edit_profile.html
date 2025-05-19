@@ -1,21 +1,66 @@
-{& extends 'base.html' %}
+{% extends 'base.html' %}
 {% load static %}
-
+{% block title %}
+    {{ block.super }} - Edit Profile
+{% endblock %}
 {% block content %}
-    <div class="container mt-5">
-        <h1 class="text-center">Edit Profile</h1>
-        <p class="text-center">Update your profile information below.</p>
-
-        {% if form.non_field_errors %}
-            <div class="alert alert-danger">{{ form.non_field_errors }}</div>
-        {% endif %}
-
-
+    <div class="container mt-5"> 
         <form method="post" action="{% url 'accounts:edit_profile' %}">
-            
-            <button type="submit" class="btn btn-primary">Save changes</button>
-        </form>
+            <h1 class="text-center">Edit Profile</h1>
+            <p class="text-center">Update your profile information below.</p>
 
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+            {% endif %}
+            {% if form.username.errors %}
+                <div class="alert alert-danger">{{ form.username.errors }}</div>
+            {% endif %}
+            {% if form.email.errors %}
+                <div class="alert alert-danger">{{ form.email.errors }}</div>
+            {% endif %}
+            {% if form.first_name.errors %}
+                <div class="alert alert-danger">{{ form.first_name.errors }}</div>
+            {% endif %}
+            {% if form.last_name.errors %}
+                <div class="alert alert-danger">{{ form.last_name.errors }}</div>
+            {% endif %}
+           <label for="username">Username</label>       
+            <input type="text" name="username" id="username" class="form-control" value="{{ user.username }}" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="form-control" value="{{ user.email }}" required>
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" id="first_name" class="form-control" value="{{ user.first_name }}" required>
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name" class="form-control" value="{{ user.last_name }}" required>
+            <label for="password">New Password (leave blank to keep current password)</label>
+            <input type="password" name="password" id="password" class="form-control">
+            <label for="password_confirm">Confirm New Password</label>
+            <input type="password" name="password_confirm" id="password_confirm" class="form-control">
+            <label for="profile_picture">Profile Picture</label>
+            <input type="file" name="profile_picture" id="profile_picture" class="form-control">
+            <label for="bio">Bio</label>
+            <textarea name="bio" id="bio" class="form-control">{{ user.profile.bio }}</textarea>
+            <label for="favorite_genre">Favorite Genre</label>
+            <select name="favorite_genre" id="favorite_genre" class="form-control">
+                <option value="">Select your favorite genre</option>
+                <option value="Action" {% if user.profile.favorite_genre == 'Action' %}selected{% endif %}>Action</option>
+                <option value="Comedy" {% if user.profile.favorite_genre == 'Comedy' %}selected{% endif %}>Comedy</option>
+                <option value="Drama" {% if user.profile.favorite_genre == 'Drama' %}selected{% endif %}>Drama</option>
+                <option value="Horror" {% if user.profile.favorite_genre == 'Horror' %}selected{% endif %}>Horror</option>
+                <option value="Sci-Fi" {% if user.profile.favorite_genre == 'Sci-Fi' %}selected{% endif %}>Sci-Fi</option>
+                <option value="Romance" {% if user.profile.favorite_genre == 'Romance' %}selected{% endif %}>Romance</option>
+                <option value="Thriller" {% if user.profile.favorite_genre == 'Thriller' %}selected{% endif %}>Thriller</option>
+                <option value="Fantasy" {% if user.profile.favorite_genre == 'Fantasy' %}selected{% endif %}>Fantasy</option>
+                <option value="Documentary" {% if user.profile.favorite_genre == 'Documentary' %}selected{% endif %}>Documentary</option>
+                <option value="Animation" {% if user.profile.favorite_genre == 'Animation' %}selected{% endif %}>Animation</option>
+                <option value="Adventure" {% if user.profile.favorite_genre == 'Adventure' %}selected{% endif %}>Adventure</option>
+                <option value="Mystery" {% if user.profile.favorite_genre == 'Mystery' %}selected{% endif %}>Mystery</option>
+                <option value="Crime" {% if user.profile.favorite_genre == 'Crime' %}selected{% endif %}>Crime</option>
+            </select>
+            <label for="favorite_movies">Favorite Movies</label>
+            <input type="text" name="favorite_movies" id="favorite_movies" class="form-control" value="{{ user.profile.favorite_movies }}">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
         <a href="{% url 'accounts:profile' %}" class="btn btn-secondary">Back to Profile</a>
     </div>
 {% endblock %}

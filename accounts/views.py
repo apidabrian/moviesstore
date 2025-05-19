@@ -33,7 +33,7 @@ def login_view(request):
         return render(request, 'accounts/login.html')
 def logout_view(request):
     logout(request)
-    return render(request, 'home/index.html', {'message': 'You have been logged out.'})
+    return render(request, 'accounts/logout.html', {'message': 'You have been logged out.'})
 def profile(request):
     if request.user.is_authenticated:
         return render(request, 'accounts/profile.html', {'user': request.user})

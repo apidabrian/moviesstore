@@ -1,11 +1,19 @@
 {%extends "base.html" %}
 {% block content %}
 <div class="container">
-    <h2>Profile</h2>
+    <h2 class="">Profile</h2>
+    <p class="">Welcome, {{ user.username }}!</p>
+    <p  class ="">Here are your details:</p>
+
     <p>Username: {{ user.username }}</p>
     <p>Email: {{ user.email }}</p>
     <p>First Name: {{ user.first_name }}</p>
     <p>Last Name: {{ user.last_name }}</p>
+    <p>Bio: {{ user.profile.bio }}</p>
+    <p>Favorite Genre: {{ user.profile.favorite_genre }}</p>
+    <p>Favorite Movies: {{ user.profile.favorite_movies }}</p>
+    <p>Profile Picture: <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" width="100"></p>
+    <p>Joined on: {{ user.date_joined }}</p>
 
     <h3>Your Movies</h3>
     {% if movies %}

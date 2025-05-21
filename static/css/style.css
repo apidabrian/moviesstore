@@ -39,15 +39,11 @@ a {
   DROPDOWN STYLES
 ------------------------------------*/
 .dropdown-menu .dropdown-item:hover {
-    background-color: #2E2E2E;
     color: white;
     transition: all 0.2s ease-in-out;
 }
 .dropdownMenuButton:hover {
     transition: all 0.2s ease-in-out;
-}
-.dropdown:hover .dropdown-menu {
-    background-color: #2E2E2E;
 }
 /*------------------------------------
   FOOTER STYLES

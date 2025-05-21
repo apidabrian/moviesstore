@@ -6,6 +6,8 @@
 {% block content %}
     <div class="container mt-5"> 
         <form method="post" action="{% url 'accounts:edit_profile' %}">
+            {% csrf_token %}
+
             <h1 class="text-center">Edit Profile</h1>
             <p class="text-center">Update your profile information below.</p>
 

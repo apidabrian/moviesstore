@@ -20,10 +20,16 @@ a {
   BACKGROUND STYLES
 ------------------------------------*/
 .bg-index {
-    background: url("../images/about.jpg") no-repeat fixed;
+    background: url("../images/banner.jpg") no-repeat fixed;
     background-size: cover;
     background-position: center;
 }
+.bg-image {
+    background: url("../images/banner.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: center;
+}
+
 
 nav {
     background: rgba(34, 34, 34, 0.95);
@@ -76,15 +82,22 @@ nav ul li a:focus {
 .navbar a.nav-link {
     color: #FFFEF6 !important;
 }
-
+/* Body */
+.banner{
+    width:auto;
+    height:auto;
+    background-image:url('images/banner.jpg');
+    background-size:cover;
+    background-position:center;
+}
 /*------------------------------------
   FOOTER STYLES
 ------------------------------------*/
-footer {
+/* footer {
     width: 100%;
     position: fixed;
     bottom: 0;
-}
+} */
 
 /* Main footer top section */
 .ms-footer {

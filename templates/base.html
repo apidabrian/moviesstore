@@ -49,6 +49,30 @@
                         <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
                     </div>
                 </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary  align-items-center" type="button"
+                            id="dropdownMenuButton"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false" style="background-color: transparent; border: none;">
+                          {% if user.is_authenticated %}
+                        <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center"
+                            style="width: 40px; height: 40px; font-weight: bold;">
+                            {{ user.first_name|default:"U"|slice:":1" }}{{ user.last_name|default:"N"|slice:":1" }}
+                        </div>
+                        {% else %}
+                        <img class="rounded-circle" src="{% static 'images/user.png' %}" alt="user" width="40" height="40"/>
+                        {% endif %}              
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% if user.is_authenticated %} 
+                        <li><a class="dropdown-item" href="{% url 'accounts:profile' %}">Profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a></li>
+                        {% else %}
+                        <li><a class="dropdown-item" href="{% url 'accounts:login' %}">Login</a></li>
+                        <li><a class="dropdown-item" href="{% url 'accounts:register' %}">Register</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>

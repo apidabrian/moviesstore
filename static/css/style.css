@@ -35,6 +35,14 @@ a {
 .navbar a.nav-link {
     color: #FFFEF6 !important;
 }
+/*------------------------------------
+  DROPDOWN STYLES
+------------------------------------*/
+.dropdown-menu .dropdown-item:hover {
+    background-color: #2E2E2E;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
 
 /*------------------------------------
   FOOTER STYLES

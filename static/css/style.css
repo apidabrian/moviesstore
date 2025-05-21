@@ -80,11 +80,11 @@ nav ul li a:focus {
 /*------------------------------------
   FOOTER STYLES
 ------------------------------------*/
-footer {
+/* footer {
     width: 100%;
     position: fixed;
     bottom: 0;
-}
+} */
 
 /* Main footer top section */
 .ms-footer {

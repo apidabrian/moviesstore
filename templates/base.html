@@ -31,14 +31,16 @@
      <header>
         <nav>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About us</a></li>
+                <img src="{% static 'images/logo.png' %}" alt="logo" height="40" />
+                </a>
+                <li><a href="{% url 'home:index' %}">Home</a></li>
+                <li><a href="{% url 'home:about' %}">About us</a></li>
                 <li><a href="">Cart</a></li>
                 <li><a href="">Movies</a></li>
-                <li><a href="{% url 'privacy_policy' %}">Privacy Policy</a></li>
             </ul>
-          
-    <!--Our Header section -->
+        </nav>
+<br>
+    {% comment %} <!--Our Header section -->
     <header>
         <nav class="p-3 navbar navbar-dark bg-dark navbar-expand-lg">
             <div class="container">
@@ -64,12 +66,14 @@
             </div>
 
         </nav>
-    </header>
+    </header> {% endcomment %}
 
     <!--This is the end of our Header Section -->
     <!-- Main Content we will inherit our children pages here (they will be injected here)-->
     <main>
         {% block content %}
+
+        
         {% endblock content %}
     </main>
 

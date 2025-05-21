@@ -11,3 +11,6 @@ def about(request):
 
 def privacy_policy(request):
     return render(request, 'home/privacy_policy.html')
+
+def contact_us(request):
+    return render(request, 'home/contact_us.html' )

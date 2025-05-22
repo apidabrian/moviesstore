@@ -31,6 +31,12 @@ a {
     background-position: center;
 }
 
+.about-bg {
+    background: url("../images/aboutbg.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: center;
+}
+
 
 nav {
     background: rgba(34, 34, 34, 0.95);
@@ -83,22 +89,15 @@ nav ul li a:focus {
 .navbar a.nav-link {
     color: #FFFEF6 !important;
 }
-/* Body */
-.banner{
-    width:auto;
-    height:auto;
-    background-image:url('images/banner.jpg');
-    background-size:cover;
-    background-position:center;
+/*Body */
+.lead{
+    color: #FFFEF6 !important;
+    font-style: italic;
 }
+
 /*------------------------------------
   FOOTER STYLES
 ------------------------------------*/
-/* footer {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-} */
 
 /* Main footer top section */
 .ms-footer {

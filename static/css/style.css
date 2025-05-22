@@ -23,6 +23,7 @@ a {
     background: url("../images/banner.jpg") no-repeat fixed;
     background-size: cover;
     background-position: center;
+    height: auto
 }
 .bg-image {
     background: url("../images/banner.jpg") no-repeat fixed;

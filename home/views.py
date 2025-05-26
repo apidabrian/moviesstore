@@ -13,3 +13,7 @@ def about(request):
 def privacy_policy(request):
     template_data = {'title': 'Privacy Policy'}
     return render(request, 'privacy_policy.html', template_data)
+
+def cart(request):
+    template_data = {'title': 'Cart'}
+    return render(request, 'cart.html', template_data)
